@@ -1,16 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@font-face {
+  src: url("./assets/font/PPMonumentExtended-Black.otf");
+  font-family: Monument;
+}
+@font-face {
+  src: url("./assets/font/Fontspring-DEMO-integralcf-regular.otf");
+  font-family: Spring;
+}
+@font-face {
+  src: url("./assets/font/Raleway-Bold.ttf");
+  font-family: Raleway;
+}
 
 :root {
   --pink: #ff10f0;
   --black: #000000;
   --light-color: #181818;
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --darkblue: #211c3d;
+  --darkpurple: #372337;
+  --pink2: #a638a4;
+  --gold: #a6913c;
+  --darkpurple: #362336;
+}
+h1 {
+  font-family: Spring;
+  padding: 0 em;
+  text-decoration: none;
+}
+p {
+  font-family: Raleway;
 }
 body {
   margin: 0;
 }
 * {
-  font-family: Nunito, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,9 +42,6 @@ body {
   outline: none;
   border: none;
   transition: all 0.2s linear;
-}
-h1 {
-  @import url("assets\font\MonumentExtended-Ultrabold.otf"); /* nejde */
 }
 html {
   font-size: 20px;
@@ -37,28 +58,49 @@ header {
   justify-content: space-around;
   z-index: 10000;
   box-shadow: var(--box-shadow);
+  font-family: Spring;
 }
+
 header .jojologo {
   width: auto;
   height: 90px;
 }
+.jojologo:hover {
+  transform: rotate(6.25rad);
+  transition: 0.8s;
+}
 header .navbar {
   font-size: 30px;
   border-radius: 20px;
-  padding: 10px 30px;
+  padding: 0px 30px;
   color: #fff;
 }
 
 .navbar a {
   color: #fff;
+  padding: 25px 0px;
+  position: relative;
 }
 
 header .navbar a:active,
 header .navbar a:hover {
-  color: #fff;
-  background: var(--pink);
-  border-radius: 8px;
+  color: var(--pink);
 }
+.navbar a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 0;
+  height: 8px;
+  content: "";
+  transition: ease 0.3s;
+  background: var(--gold);
+}
+.navbar a:hover::after {
+  width: 100%;
+}
+
 .jojo-container {
   width: 100vw;
   height: 100vh;
@@ -91,7 +133,7 @@ header .navbar a:hover {
   height: auto;
 }
 .container2 {
-  padding: 0 2rem;
+  padding: 0 0rem;
   position: relative;
   height: auto;
 }
@@ -116,4 +158,79 @@ header .navbar a:hover {
   width: 550px;
   margin-top: 30px;
   margin-left: 130px;
+}
+
+.main {
+  float: left;
+  width: 100%;
+  min-height: 600px;
+}
+.center {
+  width: 1300px;
+  margin: 0 auto;
+}
+.centerblock {
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.cover {
+  background-image: url(./assets/pattern1.jpg);
+  width: 330px;
+  height: 420px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
+}
+.cover img:hover {
+  transform: translateY(-1.3rem);
+  transition: 0.5s;
+}
+.cover img {
+  width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  z-index: 1;
+  bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.covertext {
+  margin-right: 300px;
+  margin-bottom: 200px;
+  position: absolute;
+  z-index: 2;
+  font-family: Spring;
+  white-space: nowrap;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: var(--light-color);
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--light-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+  font-family: Spring;
+}
+
+.active2 {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.8;
+  margin: 10px;
+}
+.active2:hover {
+  opacity: 1;
+  transition: 0.5s;
 }
